@@ -16,7 +16,7 @@ run_tests:
     - make test
 
 
-build_image:
+.build_image:
   stage: build
   image: docker:20.10.16
   services:
@@ -30,7 +30,7 @@ build_image:
     - docker push $IMAGE_NAME:$IMAGE_TAG
 
 
-deploy:
+.deploy:
   stage: deploy
   before_script:
     - chmod 400 $SSH_KEY
